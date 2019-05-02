@@ -41,10 +41,10 @@ include 'head_common.php';
                        value="Si" />Recordar
             </p>
                 
-            <input type="submit" name="enviar" class="btn btn-primary btn-lg" value="Iniciar sesión"/>
+            <input type="submit" name="enviar" class="btn btn-success btn-lg" value="Iniciar sesión"/>
             
         </form>
         <br>
         <hr>
-        <p><a href="<?= $this->pro.'home'?>" class="btn btn-danger btn-md">Cancelar</a></p>
+        <p><a href="<?= $this->pro.'home'?>" class="btn btn-warning btn-md">Cancelar</a></p>
         </div>

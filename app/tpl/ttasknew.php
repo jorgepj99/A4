@@ -37,7 +37,7 @@ include 'head_common.php';
         </form>
         <br>
         <hr>
-        <p><a href="<?= $this->pro.'task'?>" class="btn btn-info btn-md">Listado de tareas</a></p>
+        <p><a href="<?= $this->pro.'task'?>" class="btn btn-success btn-md">Listado de tareas</a></p>
     <?php
         include 'footer_common.php';
         ?>

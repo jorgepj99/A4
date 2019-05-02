@@ -39,11 +39,11 @@ include 'head_common.php';
                             <td><?= $tarea['fecha_act']?></td>
                             
                             <td class="actions">
-                                <a href="<?= $this->pro.'task/ver/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-info">
+                                <a href="<?= $this->pro.'task/ver/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-primary">
                                     Ver
                                 </a>
 
-                                <a href="<?= $this->pro.'task/editar/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-primary">
+                                <a href="<?= $this->pro.'task/editar/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-info">
                                     Edit
                                 </a>
 
@@ -60,7 +60,7 @@ include 'head_common.php';
         </div>
 
     <hr>
-    <p><a href="<?= $this->pro.'task/nueva'?>" class="btn btn-primary btn-md">Nueva tarea</a></p>
+    <p><a href="<?= $this->pro.'task/nueva'?>" class="btn btn-success btn-md">Nueva tarea</a></p>
     <?php
         include 'footer_common.php';
         ?>

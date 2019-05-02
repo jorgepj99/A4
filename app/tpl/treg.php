@@ -59,13 +59,23 @@ include 'head_common.php';
                     echo '<span class="text-danger">'.$this->errors['password'].'</span>';
                 } ?>
             </p>
+            <p>
+                <label for="password">Repetir Contraseña:</label>
+                <br>
+                <input type="password" placeholder="Repita su contraseña" id="clave-reg" name="rpassword"
+                       size="50"/>
+                <?php
+                if (isset($this->errors['rpassword'])){
+                    echo '<span class="text-danger">'.$this->errors['rpassword'].'</span>';
+                } ?>
+            </p>
             
-            <input type="submit" name="enviar" class="btn btn-primary btn-lg" value="Registrar usuario"/>
+            <input type="submit" name="enviar" class="btn btn-success btn-lg" value="Registrar usuario"/>
 
         </form>
         <br>
         <div class="alert alert-danger" col-sm-offset-2 col-sm-8 id="msg"></div>
         <br>
         <hr>
-        <p><a href="<?= $this->pro.'home'?>" class="btn btn-danger btn-md">Cancelar</a></p>
+        <p><a href="<?= $this->pro.'home'?>" class="btn btn-warning btn-md">Cancelar</a></p>
         </div>

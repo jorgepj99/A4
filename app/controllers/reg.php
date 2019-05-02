@@ -54,6 +54,7 @@ class Reg extends Controller {
         $apellidos=filter_input(INPUT_POST, 'apellidos', FILTER_SANITIZE_STRING);
         $email=filter_input(INPUT_POST, 'email');
         $password=filter_input(INPUT_POST, 'password');
+       $rpassword=filter_input(INPUT_POST, 'rpassword');
 
         
         // Validaciones de los campos
@@ -93,6 +94,15 @@ class Reg extends Controller {
         }else{
             $errors['password']="Ingrese la contraseña";
         }
+       // password
+       if(!is_null($rpassword) && !empty($rpassword)){
+           // encriptación del password
+           if($password!=$rpassword){
+               $errors['rpassword']="Las contraseñas no coinciden";
+           }
+       }else{
+           $errors['rpassword']="Ingrese la repitición contraseña";
+       }
         
         // Si todos ellos son válidos:
         if (count($errors)==0){
