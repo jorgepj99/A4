@@ -26,7 +26,7 @@ class Error extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         $this->addData([
             'page'=>'Error',

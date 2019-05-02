@@ -10,7 +10,7 @@ include 'head_common.php';
         </div>
         <br>
         <hr>
-        <p><a href="<?= $pro.'/index.php/home'?>" class="btn btn-primary btn-md">Cancelar</a></p>
+        <p><a href="<?= $pro.'home'?>" class="btn btn-primary btn-md">Cancelar</a></p>
         </div>
     </body>
 </html>

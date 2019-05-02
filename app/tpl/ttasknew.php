@@ -3,7 +3,7 @@
 include 'head_common.php';
 
 ?>
-            <form action="<?= '/index.php/task/agregar'?>" method="POST" id="form-tareas">
+            <form action="<?= $this->pro.'task/agregar'?>" method="POST" id="form-tareas">
             <p>
                 <label for="titulo">Título</label>
                 <br>
@@ -37,7 +37,7 @@ include 'head_common.php';
         </form>
         <br>
         <hr>
-        <p><a href="<?= $this->pro.'index.php/task'?>" class="btn btn-info btn-md">Listado de tareas</a></p>
+        <p><a href="<?= $this->pro.'task'?>" class="btn btn-info btn-md">Listado de tareas</a></p>
     <?php
         include 'footer_common.php';
         ?>

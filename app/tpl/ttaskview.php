@@ -46,11 +46,11 @@ include 'head_common.php';
                 <br>
                 <hr>
                 <p>
-                <a href="<?= $this->pro.'index.php/task/editar/id_tarea/'.$this->tarea['id']; ?>" class="btn btn-primary btn-md">
+                <a href="<?= $this->pro.'task/editar/id_tarea/'.$this->tarea['id']; ?>" class="btn btn-primary btn-md">
                     Editar tarea
                 </a>
                 </p>
-                <p><a href="<?= $this->pro.'index.php/task'?>" class="btn btn-info btn-md">Listado de tareas</a></p>
+                <p><a href="<?= $this->pro.'task'?>" class="btn btn-info btn-md">Listado de tareas</a></p>
         </div>
     <?php
         include 'footer_common.php';

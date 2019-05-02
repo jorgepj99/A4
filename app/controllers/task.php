@@ -31,7 +31,7 @@ class Task extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         if(is_null($id_usuario)){
             $id_usuario=0;
@@ -81,7 +81,7 @@ class Task extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         // Almacena la identificación de la tarea
         if (isset($this->params['id_tarea'])){
@@ -89,7 +89,7 @@ class Task extends Controller{
         }else{
             Session::set('message', "No recibo identificación de task");
             Session::set('typeMessage', "danger");
-            header("Location: /index.php/task");
+            header('Location:'.$pro.'task' );
 
         }
         $this->model=new mTask();
@@ -99,14 +99,14 @@ class Task extends Controller{
         if (empty($task)){
             Session::set('message', "Tarea no encontrada");
             Session::set('typeMessage', "danger");
-            header("Location: /index.php/task");
+            header('Location:'.$pro.'task' );
         }else{
             $id_usuario=$task['id_usuario'];
             $id_usuario_sesion=Session::get('id_usuario');
             if ($id_usuario<>$id_usuario_sesion){
                 Session::set('message', "La tarea no corresponde con el usuario");
                 Session::set('typeMessage', "danger");
-                header("Location: /index.php/task");
+                header('Location:'.$pro.'task' );
             }
         }
         $title='Tareas a Hacer';
@@ -124,7 +124,7 @@ class Task extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         $title="Nueva tarea";
         
@@ -145,7 +145,7 @@ class Task extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         $title=filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_STRING);
         $descripcion=filter_input(INPUT_POST, 'descripcion', FILTER_SANITIZE_STRING);
@@ -187,7 +187,7 @@ class Task extends Controller{
                 Session::set('message', "No se pudo insertar la tarea");
                 Session::set('typeMessage', "danger");
             }
-            header("Location: /index.php/task");
+            header('Location:'.$pro.'task' );
         }else{
             // mostrar errores
             $this->addData([
@@ -211,7 +211,7 @@ class Task extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         if (isset($this->params['id_tarea'])){
             $id_tarea= $this->params['id_tarea'];
@@ -225,7 +225,7 @@ class Task extends Controller{
         if (empty($tarea)){  
             Session::set('message', "Tarea no encontrada");
             Session::set('typeMessage', "danger");
-            header("Location: /index.php/task");
+            header('Location:'.$pro.'task' );
         }else{
 
             $id_usuario=$tarea['id_usuario'];
@@ -233,14 +233,14 @@ class Task extends Controller{
             if ($id_usuario<>$id_usuario_sesion){
                 Session::set('message', "La tarea no pertenece al usuario logueado");
                 Session::set('typeMessage', "danger");
-                header("Location: /index.php/task");
+                header('Location:'.$pro.'task' );
             }
             // controlo que la no esté terminada
             $estado=$tarea['estado'];
             if ($estado==1) {
                 Session::set('message', "No puede editar una tarea ya terminada");
                 Session::set('typeMessage', "danger");
-                header("Location: /index.php/task");
+                header('Location:'.$pro.'task' );
             }
         }
         $this->addData([
@@ -258,7 +258,7 @@ class Task extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         $id_tarea=filter_input(INPUT_POST, 'id_tarea');
         $title=filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_STRING);
@@ -301,7 +301,7 @@ class Task extends Controller{
         if(is_null($id_tarea) || empty($id_tarea)){
             $_SESSION['message']="Necesito el id";
             $_SESSION['typeMessage']="danger";
-            header("Location: /index.php/task");
+            header('Location:'.$pro.'task' );
         }
         // Si no hay errores
         if (count($errors)==0){
@@ -320,7 +320,7 @@ class Task extends Controller{
                 Session::set('message', "No se pudo modificar");
                 Session::set('typeMessage', "danger");
             }
-            header("Location: /index.php/task");
+            header('Location:'.$pro.'task' );
         }else{
             $task=array();
             $task['title']=$title;
@@ -347,6 +347,11 @@ class Task extends Controller{
      * Borro la tarea
      */
     function borrar(){
+        if(env=='pro'){
+            $pro="/A4/";
+        }else{
+            $pro="/index.php/";
+        }
         if (isset($this->params['id_tarea'])){
             $id_tarea= $this->params['id_tarea'];
         }else{
@@ -362,13 +367,18 @@ class Task extends Controller{
             $_SESSION['message']="No se pudo borrar";
             $_SESSION['typeMessage']="danger";
         }
-        header("Location: /index.php/task");
+        header('Location:'.$pro.'task' );
     }
     
 
     function cerrarSesion(){
+        if(env=='pro'){
+            $pro="/A4/";
+        }else{
+            $pro="/index.php/";
+        }
         Session::destroy();  
-        header("Location: /index.php/login");
+        header('Location:'.$pro.'login' );
     }
     
 }

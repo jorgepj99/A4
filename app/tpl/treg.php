@@ -3,7 +3,7 @@
 include 'head_common.php';
                 
 ?>
-        <form id="form-reg" class="form-horizontal text-center" action="<?= $this->pro.'index.php/reg/reg'?>" method="POST" >
+        <form id="form-reg" class="form-horizontal text-center" action="<?= $this->pro.'reg/reg'?>" method="POST" >
             <p>
                 <label for="nombre">Nombre</label>
                 <br>
@@ -67,5 +67,5 @@ include 'head_common.php';
         <div class="alert alert-danger" col-sm-offset-2 col-sm-8 id="msg"></div>
         <br>
         <hr>
-        <p><a href="<?= $this->pro.'index.php/home'?>" class="btn btn-danger btn-md">Cancelar</a></p>
+        <p><a href="<?= $this->pro.'home'?>" class="btn btn-danger btn-md">Cancelar</a></p>
         </div>

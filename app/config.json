@@ -5,7 +5,7 @@
   },
   "dbconf_pro":{
     "driver":"mysql",
-    "dbhost":"http://vps80486.ovh.net",
+    "dbhost":"localhost",
     "dbuser":"jpablo_framework",
     "dbpass":"linuxlinux",
     "dbname":"jpablo_framework"

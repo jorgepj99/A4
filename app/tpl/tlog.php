@@ -1,7 +1,7 @@
 <?php
 include 'head_common.php';
 ?>
-        <form id="form-log" action="<?= $this->pro.'index.php/login/log' ?>" method="POST" class="text-center">
+        <form id="form-log" action="<?= $this->pro.'login/log' ?>" method="POST" class="text-center">
             <p>
                 <label for="email">Correo electrónico </label>
                 <br>
@@ -46,5 +46,5 @@ include 'head_common.php';
         </form>
         <br>
         <hr>
-        <p><a href="<?= $this->pro.'index.php/home'?>" class="btn btn-danger btn-md">Cancelar</a></p>
+        <p><a href="<?= $this->pro.'home'?>" class="btn btn-danger btn-md">Cancelar</a></p>
         </div>

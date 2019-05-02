@@ -39,15 +39,15 @@ include 'head_common.php';
                             <td><?= $tarea['fecha_act']?></td>
                             
                             <td class="actions">
-                                <a href="<?= $this->pro.'index.php/task/ver/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-info">
+                                <a href="<?= $this->pro.'task/ver/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-info">
                                     Ver
                                 </a>
 
-                                <a href="<?= $this->pro.'index.php/task/editar/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-primary">
+                                <a href="<?= $this->pro.'task/editar/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-primary">
                                     Edit
                                 </a>
 
-                                <a href="<?= $this->pro.'index.php/task/borrar/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-danger btn-delete">
+                                <a href="<?= $this->pro.'task/borrar/id_tarea/'.$tarea['id']?>" class="btn btn-sm btn-danger btn-delete">
                                     Borrar
                                 </a>
                             </td>
@@ -60,7 +60,7 @@ include 'head_common.php';
         </div>
 
     <hr>
-    <p><a href="<?= APP_W.'task/nueva'?>" class="btn btn-primary btn-md">Nueva tarea</a></p>
+    <p><a href="<?= $this->pro.'task/nueva'?>" class="btn btn-primary btn-md">Nueva tarea</a></p>
     <?php
         include 'footer_common.php';
         ?>

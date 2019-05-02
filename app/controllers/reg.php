@@ -27,7 +27,7 @@ class Reg extends Controller {
        if(env=='pro'){
            $pro="/A4/";
        }else{
-           $pro="/";
+           $pro="/index.php/";
        }
        $this->addData([
            'page'=>'Registro',
@@ -47,7 +47,7 @@ class Reg extends Controller {
        if(env=='pro'){
            $pro="/A4/";
        }else{
-           $pro="/";
+           $pro="/index.php/";
        }
         // Recupero los datos ingresados por el formulario
         $nombre=filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
@@ -102,7 +102,7 @@ class Reg extends Controller {
             if ($result){ 
                 Session::set('message', "Usuario registrado");
                 Session::set('typeMessage', "success");
-                header('Location:/index.php/login' );
+                header('Location:'.$pro.'login' );
             }else {
                 Session::set('message', "No se pudo insertar el usuario");
                 Session::set('typeMessage', "danger");

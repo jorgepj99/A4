@@ -28,11 +28,11 @@ class Login extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         // Si hay un usuario logeado voy a mostrar sus tareas
         if(!is_null(Session::get('id_usuario'))){
-            header('Location:/index.php/task' );
+            header('Location:'.$pro.'task' );
 
         }
         $this->addData([
@@ -53,7 +53,7 @@ class Login extends Controller{
         if(env=='pro'){
             $pro="/A4/";
         }else{
-            $pro="/";
+            $pro="/index.php/";
         }
         $email=filter_input(INPUT_POST, 'email');
         $password=filter_input(INPUT_POST, 'clave');
@@ -96,7 +96,7 @@ class Login extends Controller{
                 Session::set('apellidos', $row[0]['apellidos']);
 
                 // listado de tareas
-                header('Location:'.'/index.php/task' );
+                header('Location:'.$pro.'task'  );
 
                 //rutas a utilizar
                 //header("Location: /A4/tarea");  production
