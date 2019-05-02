@@ -107,9 +107,10 @@ class Login extends Controller{
                 $errors['password']="Contraseña o usuario inválidos";
                 $this->addData([
                     "page"=>'Login',
-                    'title'=>'Inicia '.$email,
+                    'title'=>'Inicia sesión',
                     'email'=>$email,
-                    'errores'=>$errors
+                    'errores'=>$errors,
+                    'pro'=>$pro
                 ]);
                 $this->model=new mLogin();
                 $this->view=new vLogin($this->dataView, $this->dataTable);
@@ -119,7 +120,7 @@ class Login extends Controller{
             // mostrar el formulario con los errores
             $this->addData([
                 "page"=>'Login',
-                'title'=>'sesión '.$password,
+                'title'=>'Inicia sesión',
                 'email'=>$email,
                 'errores'=>$errors,
                 'pro'=>$pro

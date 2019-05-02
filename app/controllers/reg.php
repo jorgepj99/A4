@@ -114,7 +114,8 @@ class Reg extends Controller {
                     'nombre'=>$nombre,
                     'apellidos'=>$apellidos,
                     'email'=>$email,
-                    'errors'=>$errors
+                    'errors'=>$errors,
+                    'pro'=>$pro
                 ]);
                 $this->view=new vReg($this->dataView, $this->dataTable);
                 $this->view->show();
